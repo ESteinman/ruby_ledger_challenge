@@ -1,38 +1,35 @@
 require 'date'
+require './lib/accounts'
 
 class Ledger
 
-    attr_accessor :funds, :account, :amount
+    attr_accessor :funds, :account, :balance, :check_account_name
 
     def initialize
         @funds = gets.chomp
         @account = nil
-        @amount = 0
-        @account_name = gets.chomp
+        @balance = 0
+        @check_account_name
     end
 
-    def account_name
-        account_name = gets.chomp
-    end 
-
-    def create_check_account
-        amount == nil
+    def check_account_name
+        @check_account_name = "add check account".split("add check account").join
     end
 
-    def create_accounts
-        case
-        when user.input == "add check account '#{account_name}'"
-            subject.create_check_account
-        when user.input == "add expense account '#{account_name}'"
-            subject.create-expense_account
-        else user.input == "add income account '#{account_name}"
-            subject.create_income_account
-        end
+    def add_check_account
+        gets "add check account '#{check_account_name}'"
+        subject.create_check_account
     end
+
+    
 
     private
-end
+    
+    def create_check_account
+        puts "'#{check_account_name}':'#{balance}'"
+    end
 
-class CheckAccount
-
+    def create_expense_account
+        puts "'#{check_account_name}':'#{balance}'"
+    end
 end
