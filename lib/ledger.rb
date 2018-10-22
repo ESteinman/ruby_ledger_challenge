@@ -9,11 +9,14 @@ class Ledger
         @funds = gets.chomp
         @account = nil
         @balance = 0
-        @check_account_name
     end
 
     def check_account_name
-        @check_account_name = "add check account".split("add check account").join
+        @check_account_name = gets.chomp.split("add check account").join
+    end
+
+    def expense_account
+        
     end
 
     def add_check_account
@@ -29,10 +32,6 @@ class Ledger
     
 
     private
-    
-    def create_check_account
-        puts "'#{check_account_name}':'#{balance}'"
-    end
 
     def create_expense_account
         puts "'#{check_account_name}':'#{balance}'"
