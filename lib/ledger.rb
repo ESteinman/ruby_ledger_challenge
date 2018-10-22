@@ -18,7 +18,12 @@ class Ledger
 
     def add_check_account
         gets "add check account '#{check_account_name}'"
-        subject.create_check_account
+        subject.check_account.create
+        if subject.check_account.persisted?
+            puts "'#{check_account_name}':'#{balance}'"
+        else
+            puts "Your account could not be created"
+        end
     end
 
     
