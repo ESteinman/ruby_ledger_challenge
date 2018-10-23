@@ -1,5 +1,3 @@
-require './lib/check_account.rb'
-
 File.foreach("input.txt").with_index do |line, line_num|
     puts "#{line_num}: #{line}"
 end
