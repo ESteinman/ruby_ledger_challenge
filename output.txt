@@ -1,0 +1,4 @@
+Bankkonto:
+Livsmedel:-50
+Livsmedel:-500
+Inkomst:1000
